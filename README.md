@@ -22,19 +22,10 @@ choice ends the sentence. Built with PennController (JavaScript).
   use a length-matched pseudoword. The positions are listed in the `PseudoPos` column.
   For six items (WAS02, WAS06, WAS10, WAS14, WAS18, WAS22) the distractor at the position of
   "was" is "were" (`WasWere` column).
-- The layout is centered: each word pair appears in two boxes centered on the page.
 - Logging: a reaction time for every word position (`RT_01`, `RT_02`, ...), `SentenceTime`,
   the key pressed, the distractor string, and which positions had pseudowords. Words never reached after an error are `NA`.
 - Participants enter an ID on the first screen.
 
-## How to run
-
-1. Create a project on the PCIbex Farm (or sync this repository).
-2. Make sure `data_includes/main.js` and `chunk_includes/materials.csv` are in the project.
-3. Click Test, finish a full run so the results are saved, then download the results.
-
-To try a short version first, put `test/main_test.js` in place of `main.js` and upload
-`test/materials_test.csv` as a resource.
 
 ## Python scripts (`scripts/`)
 
