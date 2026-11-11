@@ -29,7 +29,12 @@ const RIGHT_KEY = "J";
 const WORD_FONT = "32px";
 // ---------------------------------
 
-Sequence("intro", randomize("maze"), SendResults(), "bye");
+// Results are sent after EVERY sentence (not only at the end), so a participant who quits
+// part-way still leaves all the sentences they finished. "sendEach" is a SendResults item
+// that is placed after each maze trial; PennController only sends the new lines each time.
+// (A participant who closes the window in the middle of a sentence loses only that sentence.)
+SendResults("sendEach");
+Sequence("intro", followEachWith("sendEach", randomize("maze")), SendResults(), "bye");
 
 // Merge punctuation onto the previous word so "week ," becomes "week,"
 const tidy = s => s.trim().replace(/\s+([,.;:!?])/g, "$1").split(/\s+/);
