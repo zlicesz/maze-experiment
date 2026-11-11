@@ -1,6 +1,9 @@
 // Maze task in PennController (no audio) for the full WAS materials.
 // Reads materials.csv from the Resources folder.
-// Columns used: Item, Condition, Group, Sentence, Distractor, WasWere
+// Columns used: Item, Condition, Group, Sentence, Distractor, WasWere, PseudoPos
+//
+// Layout: everything is centered on the page; each word pair is shown in two
+// fixed-width boxes (left word / right word) centered in a centered canvas.
 //
 // Logging: for every sentence the results file gets
 //   - one Key row per word pair (PressedKey + EventTime)
@@ -8,9 +11,9 @@
 //     word pair appearing to the key press; "NA" for words never reached because
 //     of an earlier error)
 //   - a SentenceTime row (sum of the RTs for that sentence)
-//   - Distractor, Sentence and CorrectSides columns on every row
+//   - Distractor, Sentence, CorrectSides, WasWere and PseudoPos columns on every row
 // Use process_results.py to turn the results file into one clean row per word
-// (Word, Distractor, RT, ...).
+// (Word, Distractor, DistractorType, RT, ...).
 //
 // Counterbalancing: each item appears in two versions (AAL / Neutral) in
 // Group 1 and Group 2. PennController sees the "Group" column and gives each
@@ -23,6 +26,7 @@ const SHOW_FULL_SENTENCE = true;   // show the full sentence after the last corr
 const FULL_SENTENCE_MS   = 2000;   // how long it stays on screen (milliseconds)
 const LEFT_KEY  = "F";
 const RIGHT_KEY = "J";
+const WORD_FONT = "32px";
 // ---------------------------------
 
 Sequence("intro", randomize("maze"), SendResults(), "bye");
@@ -30,23 +34,33 @@ Sequence("intro", randomize("maze"), SendResults(), "bye");
 // Merge punctuation onto the previous word so "week ," becomes "week,"
 const tidy = s => s.trim().replace(/\s+([,.;:!?])/g, "$1").split(/\s+/);
 
+// A centered text element
+const ctext = (name, html, size) =>
+    newText(name, html).css({"font-size": size || "22px", "text-align": "center"}).center();
+
+// A centered 800x300 canvas holding one centered text line (used for feedback messages)
+const messageCanvas = (name, html, size, y) =>
+    newCanvas(name, 800, 300)
+        .center()
+        .add(20, y || 130,
+            newText(name + "-t", html).css({"width": "760px", "text-align": "center", "font-size": size || "24px"}))
+        .print();
+
 newTrial("intro",
-    newText("id-label", "<p>Please enter your participant name:</p>")
-        .css("font-size", "22px")
-        .print()
+    ctext("id-label", "<p>Please enter your participant name:</p>").print()
     ,
     newTextInput("inputID")
-        .css("font-size", "22px")
+        .css({"font-size": "22px", "text-align": "center"})
+        .center()
         .print()
     ,
-    newText("spacer", "<p></p>").print()
+    ctext("spacer", "<p></p>").print()
     ,
-    newText("intro-text",
+    ctext("intro-text",
         "<p>You will see two words at a time, one on the left and one on the right.</p>" +
         "<p>Choose the word that continues the sentence.</p>" +
         "<p>Press <b>" + LEFT_KEY + "</b> for the LEFT word and <b>" + RIGHT_KEY + "</b> for the RIGHT word.</p>" +
         "<p>If you choose the wrong word, the sentence stops and the next one begins.</p>")
-        .css("font-size", "22px")
         .print()
     ,
     newButton("start", "Start")
@@ -82,10 +96,16 @@ Template("materials.csv", row => {
         const correctKey = correctLeft ? LEFT_KEY : RIGHT_KEY;
         sides += correctLeft ? "L" : "R";
 
+        // Word boxes are 300px wide with centered text: left word centered at x=200,
+        // right word centered at x=600, inside an 800px-wide canvas that is itself
+        // centered on the page.
+        const boxCss = {"width": "300px", "text-align": "center", "font-size": WORD_FONT};
+
         cmds.push(
-            newCanvas("c" + i, 800, 200)
-                .add(100, 80, newText("l" + i, left).css("font-size", "32px"))
-                .add(600, 80, newText("r" + i, right).css("font-size", "32px"))
+            newCanvas("c" + i, 800, 300)
+                .center()
+                .add(50,  130, newText("l" + i, left).css(boxCss))
+                .add(450, 130, newText("r" + i, right).css(boxCss))
                 .print()
             ,
             getVar("clock").set(v => { t0 = Date.now(); return t0; })      // start the clock
@@ -101,7 +121,7 @@ Template("materials.csv", row => {
             getKey("k" + i).test.pressed(correctKey)
                 .failure(
                     getCanvas("c" + i).remove(),
-                    newText("err" + i, "Wrong word - next sentence").css("font-size", "24px").print(),
+                    messageCanvas("err" + i, "Wrong word - next sentence", "24px"),
                     newTimer("t" + i, 800).start().wait(),
                     end()   // wrong choice: the trial stops here
                 )
@@ -113,8 +133,14 @@ Template("materials.csv", row => {
     // These commands only run if every choice was correct
     if (SHOW_FULL_SENTENCE) {
         cmds.push(
-            newText("done-label", "Sentence complete:").css("font-size", "20px").print(),
-            newText("full-sentence", "<b>" + words.join(" ") + "</b>").css("font-size", "32px").print(),
+            newCanvas("done", 800, 300)
+                .center()
+                .add(20, 70,  newText("done-label", "Sentence complete:")
+                                  .css({"width": "760px", "text-align": "center", "font-size": "20px"}))
+                .add(20, 110, newText("full-sentence", "<b>" + words.join(" ") + "</b>")
+                                  .css({"width": "760px", "text-align": "center", "font-size": "32px"}))
+                .print()
+            ,
             newTimer("t-full", FULL_SENTENCE_MS).start().wait()
         );
     }
@@ -127,10 +153,11 @@ Template("materials.csv", row => {
         .log("Sentence", row.Sentence)
         .log("Distractor", row.Distractor)
         .log("WasWere", row.WasWere)
+        .log("PseudoPos", row.PseudoPos)
         .log("CorrectSides", sides);
 });
 
 newTrial("bye",
-    newText("Thank you for participating!").css("font-size", "24px").print(),
+    ctext("bye-text", "Thank you for participating!", "24px").print(),
     newButton("finish", "Finish").center().print().wait()
 );
