@@ -1,0 +1,84 @@
+Item,Condition,Group,Sentence,Distractor,WasWere
+WAS01,AAL,1,"Last week, they was definitely fighting","x-x-x kenk, plel vug chilfukbit choddree",no
+WAS01,Neutral,2,"Last week, he was definitely fighting","x-x-x kenk, gu vug chilfukbit choddree",no
+WAS02,AAL,2,"At the time, our bus rides was kind of fun","x-x-x kug veeg, vug zud chusk were poob gu vup",yes
+WAS02,Neutral,1,"At the time, our bus ride was kind of fun","x-x-x kug veeg, vug zud wund were poob gu vup",yes
+WAS03,AAL,1,The other kids was scared of him back then,x-x-x slurt chob zud feewee je vup kisk tuza,no
+WAS03,Neutral,2,The other kid was scared of him back then,x-x-x slurt kug zud feewee je vup kisk tuza,no
+WAS04,AAL,2,"In those days, you was the biggest in the group","x-x-x kagsi govu, zud zok kug gloshit gu vug glewu",no
+WAS04,Neutral,1,"In those days, she was the biggest in the group","x-x-x kagsi govu, kug zok vup gloshit gu zud glewu",no
+WAS05,AAL,1,"On Friday, they was down there","x-x-x Poogom, rark vug wofe slirt",no
+WAS05,Neutral,2,"On Friday, he was down there","x-x-x Poogom, lu vug wofe slirt",no
+WAS06,AAL,2,They was captured at that time,x-x-x were bleeshee ru clud dird,yes
+WAS06,Neutral,1,He was captured at that time,x-x-x were bleeshee ru clud dird,yes
+WAS07,AAL,1,The roads was too slick last night.,x-x-x gleld vud zud crind hohu clolk.,no
+WAS07,Neutral,2,The road was too slick last night.,x-x-x wulk vud zud crind hohu clolk.,no
+WAS08,AAL,2,Things was pretty hot during the war,x-x-x vug prebee vup gleetu vud zud,no
+WAS08,Neutral,1,Everything was pretty hot during the war,x-x-x vug prebee vup gleetu vud zud,no
+WAS09,AAL,1,I felt like the kids was different.,x-x-x hirk zesk vug jusk zok sleertjoo.,no
+WAS09,Neutral,2,I felt like the kid was different.,x-x-x hirk zesk vug vud zok sleertjoo.,no
+WAS10,AAL,2,She thought that the wings was huge,x-x-x cledroo clud zud frild were drod,yes
+WAS10,Neutral,1,She thought that the wing was huge,x-x-x cledroo clud zud tund were drod,yes
+WAS11,AAL,1,Things was cheaper back then.,x-x-x kug jipuroo shob pusk.,no
+WAS11,Neutral,2,Everything was cheaper back then.,x-x-x kug jipuroo shob pusk.,no
+WAS12,AAL,2,The prices was different then.,x-x-x stujon kug soshooflu vool.,no
+WAS12,Neutral,1,The price was different then.,x-x-x stimi kug soshooflu vool.,no
+WAS13,AAL,1,"That year, they was putting fifth grade in the middle school","x-x-x toha, clek vug jagrird prurk drusk pu vud drefru matchu",no
+WAS13,Neutral,2,"That year, she was putting fifth grade in the middle school","x-x-x toha, zud vug jagrird prurk drusk pu vud drefru matchu",no
+WAS14,AAL,2,You was just speaking,x-x-x were plet sooracle,yes
+WAS14,Neutral,1,He was just speaking,x-x-x were plet sooracle,yes
+WAS15,AAL,1,"At that point, my friends was from the area","x-x-x zird closk, gu mewoosk kug cloo vup kesk",no
+WAS15,Neutral,2,"At that point, my friend was from the area","x-x-x zird closk, gu plohab kug cloo vup kesk",no
+WAS16,AAL,2,"On Sunday, we was back in church.","x-x-x Budrod, ru vug slus pu gudroo.",no
+WAS16,Neutral,1,"On Sunday, I was back in church.","x-x-x Budrod, B vug slus pu gudroo.",no
+WAS17,AAL,1,Computers was the big thing at that point,x-x-x vup zok zud frani zo gija govip,no
+WAS17,Neutral,2,The computer was the big thing at that point,x-x-x ristepji vup zok zud frani zo gija govip,no
+WAS18,AAL,2,Weird little things was happening there at the time,x-x-x bizust verzel were fuviharab deert ro kug fepe,yes
+WAS18,Neutral,1,A weird little thing was happening there at the time,x-x-x juhed bizust zicle were fuviharab deert ro kug fepe,yes
+WAS19,AAL,1,They was brief in that conversation,x-x-x zok soont pu zald glokvekasent,no
+WAS19,Neutral,2,She was brief in that conversation,x-x-x zok soont pu zald glokvekasent,no
+WAS20,AAL,2,Do you remember when your parents was born?,x-x-x zud breetirk stek prir blodnor kug drep?,no
+WAS20,Neutral,1,Do you remember when your dad was born?,x-x-x zud breetirk stek prir kug zok drep?,no
+WAS21,AAL,1,Our lives was great in those days.,x-x-x zepid vud goork bu frado zisk.,no
+WAS21,Neutral,2,Our life was great in those days.,x-x-x plud vud goork bu frado zisk.,no
+WAS22,AAL,2,We was close to that street earlier on,x-x-x were slont zi frul cribru treerde zu,yes
+WAS22,Neutral,1,I was close to that street earlier on,x-x-x were slont zi frul cribru treerde zu,yes
+WAS23,AAL,1,My parents was getting older then.,x-x-x kugclib zok gohewoo shost reho.,no
+WAS23,Neutral,2,My dad was getting older then.,x-x-x kug zok gohewoo shost reho.,no
+WAS24,AAL,2,"Years ago, the kids was pretty close.","x-x-x zud, vud fral zok murtte shurk.",no
+WAS24,Neutral,1,"Years ago, the kid was pretty close.","x-x-x zud, vud zok vup murtte shurk.",no
+WAS25,AAL,1,Those relationships was just really close in those days.,x-x-x midenseerkbuk vup fedi hilkwa slibu ju prike cril.,no
+WAS25,Neutral,2,That relationship was just really close in those days.,x-x-x drochurdtuha vup fedi hilkwa slibu ju prike cril.,no
+WAS26,AAL,2,We was just so taken aback.,x-x-x vud jowe fo dreen slagi.,no
+WAS26,Neutral,1,I was just so taken aback.,x-x-x vud jowe fo dreen slagi.,no
+WAS27,AAL,1,The neighborhoods was close at one point.,x-x-x paldsoorablan kug cland vo vug ragro.,no
+WAS27,Neutral,2,The neighborhood was close at one point.,x-x-x slolkshifres kug cland vo vug ragro.,no
+WAS28,AAL,2,They was funding the program for a while.,x-x-x vud trakkam zok shugank kug q frald.,no
+WAS28,Neutral,1,He was funding the program for a while.,x-x-x vud trakkam zok shugank kug q frald.,no
+WAS29,AAL,1,My friends was going to private school for a few years.,x-x-x brigcro kug treek zi juflefo flulde zud j vup wolop.,no
+WAS29,Neutral,2,My friend was going to private school for a few years.,x-x-x poolge kug treek zi juflefo flulde zud j vup wolop.,no
+WAS30,AAL,2,The parents was very much involved in the school for a while,x-x-x tipotee zok surk bluk steetbre zo zud buldtu vud z glunt,no
+WAS30,Neutral,1,The dad was very much involved in the school for a while,x-x-x vup zok surk bluk steetbre zo zud buldtu vud z glunt,no
+WAS31,AAL,1,They was putting on a lot of plays,x-x-x zud glimbre zo j zok ke jedru,no
+WAS31,Neutral,2,She was putting on a lot of plays,x-x-x zud glimbre zo j zok ke jedru,no
+WAS32,AAL,2,"When the job openings was there, I came","x-x-x kug vup shicrezi vud juble, V plir",no
+WAS32,Neutral,1,"When the job opening was there, I came","x-x-x kug vup bropgar vud juble, V plir",no
+WAS33,AAL,1,I wanted to go to the school where my friends was going,x-x-x blacro ro ru ri vup voocri zegla vo frircre kug grunk,no
+WAS33,Neutral,2,I wanted to go to the school where my friend was going,x-x-x blacro ro ru ri vup voocri zegla vo rostmo kug grunk,no
+WAS34,AAL,2,You was twenty at the time,x-x-x vup figepi ru zok seld,no
+WAS34,Neutral,1,He was twenty at the time,x-x-x vup figepi ru zok seld,no
+WAS35,AAL,1,They was getting ready to build it that year,x-x-x zud blamsoo groor gu bumig ri grud gerk,no
+WAS35,Neutral,2,She was getting ready to build it that year,x-x-x zud blamsoo groor gu bumig ri grud gerk,no
+WAS36,AAL,2,"Back in the day, the kids was bad there","x-x-x bu zud zok, vup zife kug vug romwi",no
+WAS36,Neutral,1,"Back in the day, the kid was bad there","x-x-x bu zud zok, vup vud kug vug romwi",no
+WAS37,AAL,1,They was born in the city,x-x-x vup nilk ze zok glig,no
+WAS37,Neutral,2,He was born in the city,x-x-x vup nilk ze zok glig,no
+WAS38,AAL,2,You was just blown away,x-x-x vud dreb venbu sleg,no
+WAS38,Neutral,1,I was just blown away,x-x-x vud dreb venbu sleg,no
+WAS39,AAL,1,The hot dogs was so good last time,x-x-x zud clul zok ku vibu cheg blul,no
+WAS39,Neutral,2,The hot dog was so good last time,x-x-x zud zok vud ku vibu cheg blul,no
+WAS40,AAL,2,"Back in school, my other friends was in band.","x-x-x ju brucle, vo crirk gloproo vup gu crol.",no
+WAS40,Neutral,1,"Back in school, my other friend was in band.","x-x-x ju brucle, vo crirk shapra vup gu crol.",no
+WAS41,AAL,1,I liked it when you was there,x-x-x glool ze vuva zok zud stomi,no
+WAS41,Neutral,2,I liked it when she was there,x-x-x glool ze vuva kug zud stomi,no
+WAS42,AAL,2,"In high school, his parents was going through a divorce","x-x-x ploo pudbub, vud jesebwu zud grard zelksla v cresusk",no

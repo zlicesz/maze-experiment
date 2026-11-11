@@ -1,0 +1,7 @@
+Item,Condition,Group,Sentence,Distractor,WasWere
+WAS01,AAL,1,"Last week, they was definitely fighting","x-x-x kenk, plel vug chilfukbit choddree",no
+WAS01,Neutral,2,"Last week, he was definitely fighting","x-x-x kenk, gu vug chilfukbit choddree",no
+WAS02,AAL,2,"At the time, our bus rides was kind of fun","x-x-x kug veeg, vug zud chusk were poob gu vup",yes
+WAS02,Neutral,1,"At the time, our bus ride was kind of fun","x-x-x kug veeg, vug zud wund were poob gu vup",yes
+WAS03,AAL,1,The other kids was scared of him back then,x-x-x slurt chob zud feewee je vup kisk tuza,no
+WAS03,Neutral,2,The other kid was scared of him back then,x-x-x slurt kug zud feewee je vup kisk tuza,no
