@@ -26,18 +26,6 @@ choice ends the sentence. Built with PennController (JavaScript).
   the key pressed, the distractor string, and which positions had pseudowords. Words never reached after an error are `NA`.
 - Participants enter an ID on the first screen.
 
-
-## Python scripts (`scripts/`)
-
-Build the materials from the original file (real-word distractors) and add the pseudowords
-(needs `pip install wordfreq`; change `PSEUDO_PER_SENTENCE` or `WERE_ITEMS` at the top of the script):
-
-    python3 scripts/make_materials.py original_materials.csv chunk_includes/materials.csv
-
-Turn a results file into one row per word (Word, Distractor, DistractorType, RT, PressedKey, Correct, SentenceTime, WasWere):
-
-    python3 scripts/process_results.py results.csv chunk_includes/materials.csv word_level.csv
-
 ## Notes
 
 - Results are sent after every sentence, so partial sessions are kept (a participant who closes
