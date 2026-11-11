@@ -1,0 +1,84 @@
+Item,Condition,Group,Sentence,Distractor,WasWere,PseudoPos
+WAS01,AAL,1,"Last week, they was definitely fighting","x-x-x zast, cent yeah sheshedjoo purposes",no,2 5
+WAS01,Neutral,2,"Last week, he was definitely fighting","x-x-x zast, cent yeah sheshedjoo purposes",no,2 5
+WAS02,AAL,2,"At the time, our bus rides was kind of fun","x-x-x vup glad, vud nor saint were cent lord whom",yes,2 4
+WAS02,Neutral,1,"At the time, our bus ride was kind of fun","x-x-x vup glad, vud nor saint were cent lord whom",yes,2 4
+WAS03,AAL,1,The other kids was scared of him back then,x-x-x these dad anti drupji goal link tald push,no,5 8
+WAS03,Neutral,2,The other kid was scared of him back then,x-x-x these dad anti drupji goal link tald push,no,5 8
+WAS04,AAL,2,"In those days, you was the biggest in the group","x-x-x geeld pick, ago pre vud appears yeah glad agree",no,2 6
+WAS04,Neutral,1,"In those days, she was the biggest in the group","x-x-x geeld pick, ago pre vud appears yeah glad agree",no,2 6
+WAS05,AAL,1,"On Friday, they was down there","x-x-x Donkdu, feel yeah pelk dream",no,2 5
+WAS05,Neutral,2,"On Friday, he was down there","x-x-x Donkdu, feel yeah pelk dream",no,2 5
+WAS06,AAL,2,They was captured at that time,x-x-x were timeline sell clom kerd,yes,5 6
+WAS06,Neutral,1,He was captured at that time,x-x-x were timeline sell clom kerd,yes,5 6
+WAS07,AAL,1,The roads was too slick last night.,x-x-x apart sick vug fills cheg brain.,no,4 6
+WAS07,Neutral,2,The road was too slick last night.,x-x-x apart sick vug fills cheg brain.,no,4 6
+WAS08,AAL,2,Things was pretty hot during the war,x-x-x lot senate kug reason vup whom,no,4 6
+WAS08,Neutral,1,Everything was pretty hot during the war,x-x-x lot senate kug reason vup whom,no,4 6
+WAS09,AAL,1,I felt like the kids was different.,x-x-x brup trip app nor laws blimufrir.,no,2 7
+WAS09,Neutral,2,I felt like the kid was different.,x-x-x brup trip app nor laws blimufrir.,no,2 7
+WAS10,AAL,2,She thought that the wings was huge,x-x-x bontzoo pull miss admit were glur,yes,2 7
+WAS10,Neutral,1,She thought that the wing was huge,x-x-x bontzoo pull miss admit were glur,yes,2 7
+WAS11,AAL,1,Things was cheaper back then.,x-x-x jack keghold nice crub.,no,3 5
+WAS11,Neutral,2,Everything was cheaper back then.,x-x-x jack keghold nice crub.,no,3 5
+WAS12,AAL,2,The prices was different then.,x-x-x anyway pre slimmarba zoor.,no,4 5
+WAS12,Neutral,1,The price was different then.,x-x-x anyway pre slimmarba zoor.,no,4 5
+WAS13,AAL,1,"That year, they was putting fifth grade in the middle school","x-x-x hear, guy holy slirtju glusk worse whom hurt caught famous",no,5 6
+WAS13,Neutral,2,"That year, she was putting fifth grade in the middle school","x-x-x hear, guy holy slirtju glusk worse whom hurt caught famous",no,5 6
+WAS14,AAL,2,You was just speaking,x-x-x were slul fropgonk,yes,3 4
+WAS14,Neutral,1,He was just speaking,x-x-x were slul fropgonk,yes,3 4
+WAS15,AAL,1,"At that point, my friends was from the area","x-x-x done wants, vs herself sale relk vup else",no,7 8
+WAS15,Neutral,2,"At that point, my friend was from the area","x-x-x done wants, vs herself sale relk vup else",no,7 8
+WAS16,AAL,2,"On Sunday, we was back in church.","x-x-x Pigbee, else wood luck cent slirfo.",no,2 7
+WAS16,Neutral,1,"On Sunday, I was back in church.","x-x-x Pigbee, else wood luck cent slirfo.",no,2 7
+WAS17,AAL,1,Computers was the big thing at that point,x-x-x doubt zok vud feels al lord notes,no,3 4
+WAS17,Neutral,2,The computer was the big thing at that point,x-x-x doubt cent zok vud al lord notes avoid,no,4 5
+WAS18,AAL,2,Weird little things was happening there at the time,x-x-x greend myself were cent majority pre anti kuzo,yes,2 9
+WAS18,Neutral,1,A weird little thing was happening there at the time,x-x-x prices greend users were majority pre anti via kuzo,yes,3 10
+WAS19,AAL,1,They was brief in that conversation,x-x-x hill scope cent crig grirabcrotgi,no,5 6
+WAS19,Neutral,2,She was brief in that conversation,x-x-x hill scope cent crig grirabcrotgi,no,5 6
+WAS20,AAL,2,Do you remember when your parents was born?,x-x-x kug gleekalk jack fund itself pre ford?,no,2 3
+WAS20,Neutral,1,Do you remember when your dad was born?,x-x-x kug gleekalk jack fund itself pre ford?,no,2 3
+WAS21,AAL,1,Our lives was great in those days.,x-x-x maybe app china cent glipo slek.,no,6 7
+WAS21,Neutral,2,Our life was great in those days.,x-x-x maybe app china cent glipo slek.,no,6 7
+WAS22,AAL,2,We was close to that street earlier on,x-x-x were dooli pre fusk videos helpful app,yes,3 5
+WAS22,Neutral,1,I was close to that street earlier on,x-x-x were dooli pre fusk videos helpful app,yes,3 5
+WAS23,AAL,1,My parents was getting older then.,x-x-x explain pre profile kocla sloo.,no,5 6
+WAS23,Neutral,2,My dad was getting older then.,x-x-x explain pre profile kocla sloo.,no,5 6
+WAS24,AAL,2,"Years ago, the kids was pretty close.","x-x-x lady, vud nor sale happen roond.",no,3 7
+WAS24,Neutral,1,"Years ago, the kid was pretty close.","x-x-x lady, vud nor sale happen roond.",no,3 7
+WAS25,AAL,1,Those relationships was just really close in those days.,x-x-x thanksgiving cent hill proont dogee lake shall sell.,no,5 6
+WAS25,Neutral,2,That relationship was just really close in those days.,x-x-x thanksgiving cent hill proont dogee lake shall sell.,no,5 6
+WAS26,AAL,2,We was just so taken aback.,x-x-x pre siji ring apply sucro.,no,3 6
+WAS26,Neutral,1,I was just so taken aback.,x-x-x pre siji ring apply sucro.,no,3 6
+WAS27,AAL,1,The neighborhoods was close at one point.,x-x-x characterized sir jepoo jack kug lives.,no,4 6
+WAS27,Neutral,2,The neighborhood was close at one point.,x-x-x characterized sir jepoo jack kug lives.,no,4 6
+WAS28,AAL,2,They was funding the program for a while.,x-x-x luck borders vud imagine lie jack doont.,no,4 8
+WAS28,Neutral,1,He was funding the program for a while.,x-x-x luck borders vud imagine lie jack doont.,no,4 8
+WAS29,AAL,1,My friends was going to private school for a few years.,x-x-x placed text basis link kagramu moblak cent wall app thank.,no,6 7
+WAS29,Neutral,2,My friend was going to private school for a few years.,x-x-x placed text basis link kagramu moblak cent wall app thank.,no,6 7
+WAS30,AAL,2,The parents was very much involved in the school for a while,x-x-x anyway pre cent sleb lefudwon buy glad unless non ago earth,no,5 6
+WAS30,Neutral,1,The dad was very much involved in the school for a while,x-x-x anyway pre cent sleb lefudwon buy glad unless non ago earth,no,5 6
+WAS31,AAL,1,They was putting on a lot of plays,x-x-x pre glikblu knew yeah vug wife filed,no,3 6
+WAS31,Neutral,2,She was putting on a lot of plays,x-x-x pre glikblu knew yeah vug wife filed,no,3 6
+WAS32,AAL,2,"When the job openings was there, I came","x-x-x vug yeah vitamin glad coast, vs prib",no,2 8
+WAS32,Neutral,1,"When the job opening was there, I came","x-x-x vug yeah vitamin glad coast, vs prib",no,2 8
+WAS33,AAL,1,I wanted to go to the school where my friends was going,x-x-x winner cup nor pre thus tettra truth wall imagine lake pekug,no,7 12
+WAS33,Neutral,2,I wanted to go to the school where my friend was going,x-x-x winner cup nor pre thus tettra truth wall imagine lake pekug,no,7 12
+WAS34,AAL,2,You was twenty at the time,x-x-x lady margin sell zud zust,no,5 6
+WAS34,Neutral,1,He was twenty at the time,x-x-x lady margin sell zud zust,no,5 6
+WAS35,AAL,1,They was getting ready to build it that year,x-x-x hill anymore gitre push types ask nank hear,no,4 8
+WAS35,Neutral,2,She was getting ready to build it that year,x-x-x hill anymore gitre push types ask nank hear,no,4 8
+WAS36,AAL,2,"Back in the day, the kids was bad there","x-x-x sure link vug, cent nor pre mark sloos",no,4 9
+WAS36,Neutral,1,"Back in the day, the kid was bad there","x-x-x sure link vug, cent nor pre mark sloos",no,4 9
+WAS37,AAL,1,They was born in the city,x-x-x hill poze miss vug whom,no,3 5
+WAS37,Neutral,2,He was born in the city,x-x-x hill poze miss vug whom,no,3 5
+WAS38,AAL,2,You was just blown away,x-x-x ways nenk atlas bifi,no,3 5
+WAS38,Neutral,1,I was just blown away,x-x-x ways nenk atlas bifi,no,3 5
+WAS39,AAL,1,The hot dogs was so good last time,x-x-x upon pre yeah vs cloo cent jend,no,6 8
+WAS39,Neutral,2,The hot dog was so good last time,x-x-x upon pre yeah vs cloo cent jend,no,6 8
+WAS40,AAL,2,"Back in school, my other friends was in band.","x-x-x huge slifli, anti hoont herself lake vs cent.",no,3 5
+WAS40,Neutral,1,"Back in school, my other friend was in band.","x-x-x huge slifli, anti hoont herself lake vs cent.",no,3 5
+WAS41,AAL,1,I liked it when you was there,x-x-x solar cup flol lie holy wapla,no,4 7
+WAS41,Neutral,2,I liked it when she was there,x-x-x solar cup flol lie holy wapla,no,4 7
+WAS42,AAL,2,"In high school, his parents was going through a divorce","x-x-x lose anyway, vud tonight jack event roolzir sir majesty",no,4 8
