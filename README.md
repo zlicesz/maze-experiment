@@ -1,4 +1,4 @@
-# Maze task: was/were variation (PCIbex)
+# Maze task:
 
 PCIbex Maze experiment for Prof. Zachary Maher's research on how people process
 dialectal and grammatical variation (African American English and Dominant American English).
