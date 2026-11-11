@@ -1,29 +1,35 @@
 #!/usr/bin/env python3
 """
-Build a Maze materials file with PSEUDOWORD distractors, and "were" as the
-distractor at the "was" position for a few chosen items.
+Build a Maze materials file in which only a FEW word pairs use a PSEUDOWORD distractor,
+and "were" is the distractor at the "was" position for a few chosen items.
 
 Usage:
-    python3 make_materials.py materials.csv materials_new.csv
+    python3 make_materials.py original_materials.csv materials.csv
 
-Needs:  pip install wordfreq      (used only to make sure no pseudoword is a real word)
+The input file is your ORIGINAL materials file (real-word distractors). Needs:
+    pip install wordfreq      (used only to make sure no pseudoword is a real word)
 
 What it does
-  * Every distractor word is replaced by a pronounceable pseudoword with the SAME number
-    of letters as the correct word, keeping capital letters and punctuation
-    (e.g. "week," -> "wuft,").
-  * The first distractor stays x-x-x.
+  * In each sentence, PSEUDO_PER_SENTENCE word pairs (default 2) get a pseudoword distractor.
+    A pseudoword is pronounceable and has the SAME number of letters as the correct word,
+    keeping capital letters and punctuation (e.g. "week," -> "veeg,").
+  * All other word pairs keep the real-word distractor from the original file.
+  * The pseudoword positions are never the first word (x-x-x), never "was", and only words of
+    3+ letters. They are chosen from words that appear in BOTH the AAL and Neutral versions of
+    the item, so both versions get identical distractors at identical words.
   * For the items listed in WERE_ITEMS, the distractor at the position of "was" is "were".
-    Both conditions (AAL / Neutral) of an item get the same treatment.
-  * The same correct word in the same item always gets the same pseudoword, so the AAL and
-    Neutral versions of an item share identical distractors wherever their words are identical.
-  * A new column WasWere (yes/no) marks the items with was/were.
+    Both conditions of an item get the same treatment.
+  * New columns: WasWere (yes/no) and PseudoPos (the word positions, counting from 1, that
+    have a pseudoword distractor, e.g. "3 6").
 """
 import csv, hashlib, random, re, sys
+from collections import defaultdict
 from wordfreq import zipf_frequency
 
 # ---- Settings you can change ----
 WERE_ITEMS = {"WAS02", "WAS06", "WAS10", "WAS14", "WAS18", "WAS22"}
+PSEUDO_PER_SENTENCE = 2      # how many word pairs per sentence get a pseudoword (0 = none)
+MIN_LETTERS = 4              # only words with at least this many letters get a pseudoword
 # ---------------------------------
 
 ONSETS = ["b","d","f","g","h","j","k","l","m","n","p","r","s","t","v","w","z",
@@ -65,39 +71,61 @@ def pseudo(core, seed, avoid=()):
             return w
     raise RuntimeError("could not make a pseudoword for " + core)
 
-def make_row(row):
+def cores(row):
+    return [split_punct(w)[1].lower() for w in tidy(row["Sentence"])]
+
+def choose_pseudo_words(item_rows):
+    """Pick the words (lowercase) of an item that get a pseudoword distractor in every version."""
+    if PSEUDO_PER_SENTENCE <= 0:
+        return []
+    common = None
+    for r in item_rows:
+        eligible = {c for c in cores(r)[1:] if len(c) >= MIN_LETTERS and c != "was"}
+        common = eligible if common is None else common & eligible
+    ranked = sorted(common, key=lambda c: hashlib.md5(f"{item_rows[0]['Item']}|{c}".encode()).hexdigest())
+    return ranked[:PSEUDO_PER_SENTENCE]
+
+def make_row(row, chosen):
     words = tidy(row["Sentence"])
-    dists = ["x-x-x"]
-    seen = {}
-    used = set()          # pseudowords already used in this sentence (kept unique)
+    orig = tidy(row["Distractor"])
+    assert len(orig) == len(words), f"{row['Item']} {row['Condition']}: word counts differ"
+    dists = [orig[0]]                     # x-x-x
+    used, done, pos = set(), set(), []
     was_pos = next((i for i, w in enumerate(words) if split_punct(w)[1].lower() == "was"), None)
     use_were = row["Item"] in WERE_ITEMS and was_pos is not None
-    for i, w in enumerate(words[1:], start=1):
-        pre, core, post = split_punct(w)
+    for i in range(1, len(words)):
+        pre, core, post = split_punct(words[i])
+        k = core.lower()
         if use_were and i == was_pos:
             dists.append("were")
-            continue
-        k = core.lower()
-        seen[k] = seen.get(k, 0) + 1
-        seed = hashlib.md5(f"{row['Item']}|{k}|{seen[k]}".encode()).hexdigest()
-        p = pseudo(core, seed, used)
-        used.add(p)
-        if core[:1].isupper():
-            p = p.capitalize()
-        dists.append(pre + p + post)
-    assert len(dists) == len(words)
-    return " ".join(dists), ("yes" if use_were else "no")
+        elif k in chosen and k not in done:
+            done.add(k)
+            seed = hashlib.md5(f"{row['Item']}|{k}".encode()).hexdigest()
+            p = pseudo(core, seed, used)
+            used.add(p)
+            if core[:1].isupper():
+                p = p.capitalize()
+            dists.append(pre + p + post)
+            pos.append(i + 1)
+        else:
+            dists.append(orig[i])         # keep the original real-word distractor
+    return " ".join(dists), ("yes" if use_were else "no"), " ".join(map(str, pos))
 
 def main(src, dst):
     with open(src, encoding="utf-8-sig", newline="") as f:
         rows = list(csv.DictReader(f))
+    by_item = defaultdict(list)
     for r in rows:
-        r["Distractor"], r["WasWere"] = make_row(r)
-    cols = ["Item", "Condition", "Group", "Sentence", "Distractor", "WasWere"]
+        by_item[r["Item"]].append(r)
+    chosen = {item: choose_pseudo_words(rs) for item, rs in by_item.items()}
+    for r in rows:
+        r["Distractor"], r["WasWere"], r["PseudoPos"] = make_row(r, chosen[r["Item"]])
+    cols = ["Item", "Condition", "Group", "Sentence", "Distractor", "WasWere", "PseudoPos"]
     with open(dst, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
         w.writeheader(); w.writerows(rows)
-    print(f"Wrote {len(rows)} rows to {dst}")
+    n_pseudo = sum(len(r["PseudoPos"].split()) for r in rows)
+    print(f"Wrote {len(rows)} rows to {dst} ({n_pseudo} pseudoword distractors in total)")
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
