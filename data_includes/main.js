@@ -78,7 +78,7 @@ newTrial("intro",
     newVar("ID", "").global().set(getTextInput("inputID"))
 );
 
-Template("materials.csv", row => {
+Template("materials_test.csv", row => {
     const words = tidy(row.Sentence);
     const dists = tidy(row.Distractor);
     const cmds = [];
@@ -158,7 +158,7 @@ Template("materials.csv", row => {
         .log("Sentence", row.Sentence)
         .log("Distractor", row.Distractor)
         .log("WasWere", row.WasWere)
-        .log("PseudoPos", row.PseudoPos)
+       // .log("PseudoPos", row.PseudoPos)
         .log("CorrectSides", sides);
 });
 
